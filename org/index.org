@@ -1,8 +1,0 @@
-#+TITLE: From Org to HTML
-
-* First lets try this example from [[http://howardism.org/Technical/Emacs/literate-programming-tutorial.html][Literate Programming Tutorial]]
-** Add this code block 
-#+BEGIN_SRC emacs-lisp
-  (directory-files ".")
-#+END_SRC
-
