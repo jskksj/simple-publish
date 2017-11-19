@@ -17,7 +17,7 @@ How about tangling it out as an elisp script and then run it from the command li
  #+END_SRC
 
  #+BEGIN_SRC emacs-lisp :results silent
-   (setq cssjs "")
+   (setq cssjs "<link>") 
  #+END_SRC
 
 ** Reset a lot of the default html output
