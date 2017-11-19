@@ -38,7 +38,8 @@ How about tangling it out as an elisp script and then run it from the command li
               :publishing-function org-html-publish-to-html
               :section-numbers nil
               :with-toc nil
-              :html-head ,cssjs)))
+              :html-head ,cssjs
+              :html-postamble "<div id="postamble" class="status">")))
 
 (org-publish-current-project)
  #+END_SRC
