@@ -1,6 +1,6 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
 
-* First Thoughts on Configuring Spacemacs org-mode as a web site generator
+** First Thoughts on Configuring Spacemacs org-mode as a web site generator
 The default html export adds a lot of cruft to the output html files.
 ** How to run this as a build script
 How about tangling it out as an elisp script and then run it from the command line with emacs?
@@ -32,14 +32,17 @@ How about tangling it out as an elisp script and then run it from the command li
 ** Initialize the publishing properties
  #+BEGIN_SRC emacs-lisp :results silent 
      (setq org-publish-project-alist
-           '(("org-mode-publish"
+           '(("simple-publish"
               :base-directory "."
+              :base-extension "org"
               :publishing-directory "../publish-html"
               :publishing-function org-html-publish-to-html
               :section-numbers nil
               :with-toc nil
-              :html-head ,cssjs
-              :html-postamble "<div id="postamble" class="status">")))
+              ;;:html-head ,cssjs
+              :html-extension "html"
+              ;;:html-postamble "<div id="postamble" class="status">"
+)))
 
 (org-publish-current-project)
  #+END_SRC
