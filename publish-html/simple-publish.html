@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2017-11-19 Sun 01:07 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&lrm;</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="ai">
+<link rel="stylesheet"
+                         href="../other/mystyle.css"
+                         type="text/css"/>
+</head>
+<body>
+<div id="content">
+<div id="outline-container-orgd1249fc" class="outline-2">
+<h2 id="orgd1249fc">First Thoughts on Configuring Spacemacs org-mode as a web site generator</h2>
+<div class="outline-text-2" id="text-orgd1249fc">
+<p>
+The default html export adds a lot of cruft to the output html files.
+</p>
+</div>
+<div id="outline-container-org50c7b6d" class="outline-3">
+<h3 id="org50c7b6d">How to run this as a build script</h3>
+<div class="outline-text-3" id="text-org50c7b6d">
+<p>
+How about tangling it out as an elisp script and then run it from the command line with emacs?
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc8de38c" class="outline-2">
+<h2 id="orgc8de38c">Raw code to tangle out</h2>
+<div class="outline-text-2" id="text-orgc8de38c">
+</div>
+<div id="outline-container-org7ac8095" class="outline-3">
+<h3 id="org7ac8095">First let's set up the css and javascript imports</h3>
+<div class="outline-text-3" id="text-org7ac8095">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> cssjs <span style="color: #2d9574;">"&lt;link rel='stylesheet' type='text/css' href='../css/css/htmlize.css'&gt;</span>
+
+<span style="color: #2d9574;">             &lt;script type='text/javascript' src='../../jsLibraries/jquery.min.js'&gt;&lt;/script&gt;</span>
+<span style="color: #2d9574;">             &lt;script type='text/javascript' src='../../jsLibraries/bootstrap.bundle.min.js'&gt;&lt;/script&gt;</span>
+<span style="color: #2d9574;">             &lt;script type='text/javascript' src='../css/js/readtheorg.js'&gt;&lt;/script&gt;"</span><span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> cssjs <span style="color: #2d9574;">""</span><span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org90cab8c" class="outline-3">
+<h3 id="org90cab8c">Reset a lot of the default html output</h3>
+<div class="outline-text-3" id="text-org90cab8c">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> org-html-head-include-scripts nil 
+      org-html-html5-fancy t 
+      org-html-doctype <span style="color: #2d9574;">"html5"</span>
+      org-html-head-include-default-style nil<span style="color: #3a81c3;">)</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a144b4" class="outline-3">
+<h3 id="org5a144b4">Initialize the publishing properties</h3>
+<div class="outline-text-3" id="text-org5a144b4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">     <span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> org-publish-project-alist
+           '<span style="color: #6c3163;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"org-mode-publish"</span>
+              <span style="color: #3a81c3;">:base-directory</span> <span style="color: #2d9574;">"."</span>
+              <span style="color: #3a81c3;">:publishing-directory</span> <span style="color: #2d9574;">"../publish-html"</span>
+              <span style="color: #3a81c3;">:publishing-function</span> org-html-publish-to-html
+              <span style="color: #3a81c3;">:section-numbers</span> nil
+              <span style="color: #3a81c3;">:with-toc</span> nil
+              <span style="color: #3a81c3;">:html-head</span> <span style="color: #2d9574;">"&lt;link rel=\"stylesheet\"</span>
+<span style="color: #2d9574;">                         href=\"../other/mystyle.css\"</span>
+<span style="color: #2d9574;">                         type=\"text/css\"/&gt;"</span><span style="color: #2d9574;">)</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>
+
+<span style="color: #3a81c3;">(</span>org-publish-current-project<span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ai</p>
+<p class="date">Created: 2017-11-19 Sun 01:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
