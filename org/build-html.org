@@ -1,8 +1,5 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
 #+OPTIONS: html-postamble:nil html-preamble:nil
-** What is this project for anyway?
-The default html export adds a lot of cruft to the output html files. So first I want the [[file:empty.org][empty.org]] file to have minimal html markup.
-
 ** How to run this as a build script
 How about tangling it out as an elisp script and then run it from the command line with emacs?
 
