@@ -22,12 +22,11 @@ How about tangling it out as an elisp script and then run it from the command li
  #+END_SRC
 
 ** Reset a lot of the default html output
-The settings of these variables accomplishes the following:
  #+BEGIN_SRC emacs-lisp :results silent
-   (setq org-html-head-include-scripts nil 
-         org-html-head-include-default-style nil
-         org-html-html5-fancy t 
-         org-html-doctype "html5"
+   (setq org-html-head-include-scripts nil       ; Do not include the default javascript.
+         org-html-head-include-default-style nil ; Do not include the default css styles.
+         org-html-html5-fancy t                  ; Supposedly this is required for HTML5 output.
+         org-html-doctype "html5"                ; And yes, render out HTML5.
    )
          
  #+END_SRC
