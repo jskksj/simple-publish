@@ -34,7 +34,7 @@ How about tangling it out as an elisp script and then run it from the command li
 ** Initialize the publishing properties
 #+BEGIN_SRC emacs-lisp :results silent 
      (setq org-publish-project-alist
-           '(("simple-publish"
+           '(("build-html"
               :base-directory "."
               :base-extension "org"
               :publishing-directory "../publish-html"
