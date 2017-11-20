@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2017-11-19 Sun 23:33 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&lrm;</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="ai">
+</head>
+<body>
+<div id="content">
+<div id="outline-container-org5d95de1" class="outline-3">
+<h3 id="org5d95de1">First Thoughts on Configuring Spacemacs org-mode as a web site generator</h3>
+<div class="outline-text-3" id="text-org5d95de1">
+<p>
+The default html export adds a lot of cruft to the output html files.
+</p>
+</div>
+</div>
+<div id="outline-container-org999ef15" class="outline-3">
+<h3 id="org999ef15">How to run this as a build script</h3>
+<div class="outline-text-3" id="text-org999ef15">
+<p>
+How about tangling it out as an elisp script and then run it from the command line with emacs?
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgef5937c" class="outline-2">
+<h2 id="orgef5937c">Raw code to tangle out</h2>
+<div class="outline-text-2" id="text-orgef5937c">
+</div>
+<div id="outline-container-orgff6a7d3" class="outline-3">
+<h3 id="orgff6a7d3">First let's set up the css and javascript imports</h3>
+<div class="outline-text-3" id="text-orgff6a7d3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> cssjs <span style="color: #2d9574;">"&lt;link rel='stylesheet' type='text/css' href='../css/css/htmlize.css'&gt;</span>
+
+<span style="color: #2d9574;">             &lt;script type='text/javascript' src='../../jsLibraries/jquery.min.js'&gt;&lt;/script&gt;</span>
+<span style="color: #2d9574;">             &lt;script type='text/javascript' src='../../jsLibraries/bootstrap.bundle.min.js'&gt;&lt;/script&gt;</span>
+<span style="color: #2d9574;">             &lt;script type='text/javascript' src='../css/js/readtheorg.js'&gt;&lt;/script&gt;"</span><span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> cssjs <span style="color: #2d9574;">"&lt;link&gt;"</span><span style="color: #3a81c3;">)</span> 
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2b092a9" class="outline-3">
+<h3 id="org2b092a9">Reset a lot of the default html output</h3>
+<div class="outline-text-3" id="text-org2b092a9">
+<p>
+The settings of these variables accomplishes the following:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> org-html-head-include-scripts nil 
+      org-html-head-include-default-style nil
+      org-html-html5-fancy t 
+      org-html-doctype <span style="color: #2d9574;">"html5"</span>
+<span style="color: #3a81c3;">)</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgec8939a" class="outline-3">
+<h3 id="orgec8939a">Initialize the publishing properties</h3>
+<div class="outline-text-3" id="text-orgec8939a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">     <span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">setq</span> org-publish-project-alist
+           '<span style="color: #6c3163;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"simple-publish"</span>
+              <span style="color: #3a81c3;">:base-directory</span> <span style="color: #2d9574;">"."</span>
+              <span style="color: #3a81c3;">:base-extension</span> <span style="color: #2d9574;">"org"</span>
+              <span style="color: #3a81c3;">:publishing-directory</span> <span style="color: #2d9574;">"../publish-html"</span>
+              <span style="color: #3a81c3;">:publishing-function</span> org-html-publish-to-html
+              <span style="color: #3a81c3;">:section-numbers</span> nil
+              <span style="color: #3a81c3;">:with-toc</span> nil
+              <span style="color: #3a81c3;">:html-extension</span> <span style="color: #2d9574;">"html"</span>
+              <span style="color: #3a81c3;">:recursive</span> t
+              <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Do not exclude the name of the project or nothing will export.</span>
+              <span style="color: #3a81c3;">:exclude</span> <span style="color: #2d9574;">"build-[A-Za-z]+.org"</span>
+<span style="color: #2d9574;">)</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>
+
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span>org-publish-current-project<span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd117216" class="outline-2">
+<h2 id="orgd117216">Function checks</h2>
+<div class="outline-text-2" id="text-orgd117216">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span>stringp <span style="color: #2d9574;">"&lt;link&gt;"</span><span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #3a81c3;">(</span>print org-html-container-element<span style="color: #3a81c3;">)</span>
+<span style="color: #3a81c3;">(</span>print org-html-divs<span style="color: #3a81c3;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
