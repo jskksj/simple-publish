@@ -43,8 +43,6 @@ How about tangling it out as an elisp script and then run it from the command li
               :with-toc nil
               :html-extension "html"
               :recursive t
-              ;; Do not exclude the name of the project or nothing will export.
-              ;;:exclude "build-[A-Za-z]+.org"
 )))
 
 #+END_SRC
