@@ -33,17 +33,15 @@ How about tangling it out as an elisp script and then run it from the command li
 
 ** Initialize the publishing properties
 #+BEGIN_SRC emacs-lisp :results silent 
-     (setq org-publish-project-alist
-           '(("build-html"
-              :base-directory "."
-              :base-extension "org"
-              :publishing-directory "../publish-html"
-              :publishing-function org-html-publish-to-html
-              :section-numbers nil
-              :with-toc nil
-              :html-extension "html"
-              :recursive t
-)))
+  (setq org-publish-project-alist '(("build-html" 
+                                     :base-directory "."
+                                     :base-extension "org"
+                                     :publishing-directory "../publish-html"
+                                     :publishing-function org-html-publish-to-html
+                                     :section-numbers nil
+                                     :with-toc nil
+                                     :html-extension "html"
+                                     :recursive t)))
 
 #+END_SRC
 
