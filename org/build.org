@@ -34,7 +34,7 @@ How about tangling it out as an elisp script and then run it from the command li
 #+BEGIN_SRC emacs-lisp :results silent 
      (setq org-publish-project-alist
            '(("simple-publish"
-              :base-directory "../org"
+              :base-directory "."
               :base-extension "org"
               :publishing-directory "../publish-html"
               :publishing-function org-html-publish-to-html
