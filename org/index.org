@@ -1,0 +1,2 @@
+#+TITLE: Simple org-mode Publishing
+#+OPTIONS: html-postamble:nil html-preamble:nil
