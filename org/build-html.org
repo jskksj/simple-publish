@@ -45,7 +45,7 @@ The settings of these variables accomplishes the following:
               :html-extension "html"
               :recursive t
               ;; Do not exclude the name of the project or nothing will export.
-              :exclude "build-[A-Za-z]+.org"
+              ;;:exclude "build-[A-Za-z]+.org"
 )))
 
 #+END_SRC
