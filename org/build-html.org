@@ -43,11 +43,15 @@ How do you force all org files to be rebuilt when this function has been changed
                                      :recursive t)))
 #+END_SRC
 
+This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
 #+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project)
+  (org-publish-current-project "build-html" t)   ; Rebuild all files even if the time stamps have not changed.
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp :results silent 
+  (org-publish-current-project "build-html" nil) ; Rebuild files that have a fresh time stamp.
+#+END_SRC
 * Function checks
 #+BEGIN_SRC emacs-lisp
   (stringp "<link>")
