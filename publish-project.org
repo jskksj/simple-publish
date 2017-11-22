@@ -1,5 +1,5 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
-#+OPTIONS: html-postamble:nil html-preamble:nil
+
 ** How to run this as a build script
 :PROPERTIES:
 :CUSTOM_ID: build-html.org
@@ -27,45 +27,51 @@ How do you force all org files to be rebuilt when this function has been changed
 
 "Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when a file has changed. The above functions normally only publish changed files. You can override this and force publishing of all files by giving a prefix argument to any of the commands above."
 
+#+BEGIN_SRC emacs-lisp :results silent
+ (setq org-mode-css "<link rel='stylesheet' type='text/css' href='./css/org-mode.css'>")
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp :results silent 
-  (setq org-publish-project-alist '(("build-html" 
+  (setq org-publish-project-alist '(("publish-project" 
                                      :base-directory "."                           ; This file must be at the root of the org project.
                                      :base-extension "org"                         ; Only process org-mode files.
-                                     :publishing-directory "../publish-html"
+                                     :publishing-directory "publish-html"
                                      :publishing-function org-html-publish-to-html
                                      :section-numbers nil
                                      :with-toc nil
                                      :html-extension "html"
                                      :html-head-include-scripts nil                ; Do not include the default javascript.
                                      :html-head-include-default-style nil          ; Do not include the default css styles.
+                                     :html-head "<link rel='stylesheet' type='text/css' href='./css/org-mode.css'>"
+                                     ;:html-head `org-mode-css
                                      :html-html5-fancy t                           ; Supposedly this is required for HTML5 output.
                                      :html-doctype "html5"                         ; And yes, render out HTML5.
+                                     :html-preamble nil
+                                     :html-postamble nil
                                      :recursive t)))
 #+END_SRC
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
-#+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project "build-html" t)   ; Rebuild all files even if the time stamps have not changed.
+#+BEGIN_SRC shell :results silent
+  rm -fr ./publish-html/*
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project "build-html" nil) ; Rebuild files that have a fresh time stamp.
+  (org-publish-current-project "publish-project" nil) ; Rebuild files that have a fresh time stamp.
 #+END_SRC
-* Function checks
+
+#+BEGIN_SRC emacs-lisp :results silent 
+  (org-publish-current-project "publish-project" t)   ; Rebuild all files even if the time stamps have not changed.
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
-  (stringp "<link>")
+  (sequencep "<link rel='stylesheet' type='text/css' href='./css/org-mode.css'>")
+#+END_SRC
+
+#+begin_src emacs-lisp :eval yes :results verbatim :exports both
+  (sequencep org-mode-css)
 #+END_SRC
 
 #+RESULTS:
 : t
-
-#+BEGIN_SRC emacs-lisp
-  (print org-html-container-element)
-  (print org-html-divs)
-#+END_SRC
-
-#+RESULTS:
-| preamble  | div | preamble  |
-| content   | div | content   |
-| postamble | div | postamble |
