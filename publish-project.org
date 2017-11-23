@@ -27,10 +27,6 @@ How do you force all org files to be rebuilt when this function has been changed
 
 "Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when a file has changed. The above functions normally only publish changed files. You can override this and force publishing of all files by giving a prefix argument to any of the commands above."
 
-#+BEGIN_SRC emacs-lisp :results silent
- (setq org-mode-css "<link rel='stylesheet' type='text/css' href='./css/org-mode.css'>")
-#+END_SRC
-
 #+BEGIN_SRC emacs-lisp :results silent 
   (setq org-publish-project-alist '(("simple-publish" 
                                      :base-directory "."                           ; This file must be at the root of the org project.
@@ -63,14 +59,3 @@ This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-
 #+BEGIN_SRC emacs-lisp :results silent 
   (org-publish-current-project "simple-publish" t)   ; Rebuild all files even if the time stamps have not changed.
 #+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-  (sequencep "<link rel='stylesheet' type='text/css' href='./css/org-mode.css'>")
-#+END_SRC
-
-#+begin_src emacs-lisp :eval yes :results verbatim :exports both
-  (sequencep org-mode-css)
-#+END_SRC
-
-#+RESULTS:
-: t
