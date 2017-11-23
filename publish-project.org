@@ -27,6 +27,7 @@ If a file does not export to HTML it can be because an unset variable in a sourc
                                      :recursive t)))
 #+END_SRC
 
+** Clean and Build
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
 #+BEGIN_SRC shell :results silent
