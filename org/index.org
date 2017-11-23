@@ -1,7 +1,2 @@
-#+TITLE: Simple org-mode Publishing
+#+TITLE: 
 #+OPTIONS: html-postamble:nil html-preamble:nil
-** What is this project for anyway?
-The default html export adds a lot of cruft to the output html files. So first I want the [[file:empty.org][empty.org]] file to have minimal html markup.  
-
-The documentation build script is in [[file:build-html.org::build-html.org][build-html.org]].
-
