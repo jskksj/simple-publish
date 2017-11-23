@@ -32,7 +32,7 @@ How do you force all org files to be rebuilt when this function has been changed
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :results silent 
-  (setq org-publish-project-alist '(("publish-project" 
+  (setq org-publish-project-alist '(("simple-publish" 
                                      :base-directory "."                           ; This file must be at the root of the org project.
                                      :base-extension "org"                         ; Only process org-mode files.
                                      :publishing-directory "publish-html"
@@ -43,7 +43,6 @@ How do you force all org files to be rebuilt when this function has been changed
                                      :html-head-include-scripts nil                ; Do not include the default javascript.
                                      :html-head-include-default-style nil          ; Do not include the default css styles.
                                      :html-head "<link rel='stylesheet' type='text/css' href='./css/org-mode.css'>"
-                                     ;:html-head `org-mode-css
                                      :html-html5-fancy t                           ; Supposedly this is required for HTML5 output.
                                      :html-doctype "html5"                         ; And yes, render out HTML5.
                                      :html-preamble nil
@@ -58,11 +57,11 @@ This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project "publish-project" nil) ; Rebuild files that have a fresh time stamp.
+  (org-publish-current-project "simple-publish" nil) ; Rebuild files that have a fresh time stamp.
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project "publish-project" t)   ; Rebuild all files even if the time stamps have not changed.
+  (org-publish-current-project "simple-publish" t)   ; Rebuild all files even if the time stamps have not changed.
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
