@@ -3,3 +3,4 @@
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
 
 * A simple template project for org-mode websites
+git clone this project to a new web site name and then add or edit org files as needed.
