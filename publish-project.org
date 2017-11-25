@@ -2,6 +2,16 @@
 #+TITLE: Configure the Publishing Parameters
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
 
+* Initialze the code needed to publish org-mode files
+This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]].
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (package-initialize)
+  (require 'org)
+  (require 'ox)
+  (require 'ox-publish)
+#+END_SRC
+
 * Initialize the publishing properties
 If a file does not export to HTML it can be because an of unset variable in a source block.
 
