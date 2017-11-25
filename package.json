@@ -2,12 +2,14 @@
     "name": "simple-publish",
     "version": "0.1.0",
     "description": "* A simple template project for org-mode websites git clone this project to a new web site name and then add or edit org files as needed.",
-    "main": "index.js",
+    "main": "js/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "html-modified": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
+        "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
         "html-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el",
-        "build": "babel src -d lib"
+        "js": "babel js -d published --source-maps",
+        "build": "npm run js",
+        "clean": "rm -rf published"
     },
 
     "repository": {
