@@ -5,7 +5,7 @@
 * Initialze the code needed to publish org-mode files
 This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]].
 
-Load up the required packages.
+** Load up the required packages.
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
   (package-initialize)
   (require 'org)
@@ -45,10 +45,14 @@ Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when 
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
-This block invokes org-mode and then tangles the el file.
+This block invokes org-mode and then tangles the el file.  The idea is to use a command like the following.
+#+BEGIN_EXAMPLE
+  emacs --eval "(setq force-all nil)" --batch -l ./publish-project.el
+#+END_EXAMPLE
+
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
-(org-mode)
-(org-publish-project "simple_publish")
+  (org-mode)
+  (org-publish-project "simple-publish" force-all)
 #+END_SRC
 
 #+BEGIN_SRC shell :results silent
