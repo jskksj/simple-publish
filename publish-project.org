@@ -5,6 +5,7 @@
 * Initialze the code needed to publish org-mode files
 This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]].
 
+Load up the required packages.
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
   (package-initialize)
   (require 'org)
@@ -18,7 +19,7 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
   (setq user-mail-address "dale@dale.io")
 #+END_SRC
 
-* Initialize the publishing properties
+** Initialize the publishing properties
 If a file does not export to HTML it can be because an of unset variable in a source block.
 
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
@@ -39,12 +40,12 @@ If a file does not export to HTML it can be because an of unset variable in a so
                                      :recursive t)))
 #+END_SRC
 
-* Clean and Build
-"Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when a file has changed. The above functions normally only publish changed files. You can override this and force publishing of all files by giving a prefix argument to any of the commands above."
+** Clean and Build
+Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when a file has changed. The above functions normally only publish changed files. You can override this and force publishing of all files by giving a prefix argument to any of the commands above."
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
-This block is for the tangled el file.
+This block invokes org-mode and then tangles the el file.
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
 (org-mode)
 (org-publish-project "simple_publish")
