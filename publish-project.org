@@ -26,7 +26,7 @@ If a file does not export to HTML it can be because an of unset variable in a so
   (setq org-publish-project-alist '(("simple-publish"
                                      :base-directory "."
                                      :base-extension "org"                         ; Only process org-mode files.
-                                     :publishing-directory "./published-html"
+                                     :publishing-directory "./published"
                                      :publishing-function org-html-publish-to-html
                                      :section-numbers nil
                                      :with-toc nil
@@ -56,7 +56,7 @@ This block invokes org-mode and then tangles the el file.  The idea is to use a 
 #+END_SRC
 
 #+BEGIN_SRC shell :results silent
-  rm -fr ./published-html/*
+  rm -fr ./published/*
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :results silent 

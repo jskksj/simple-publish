@@ -9,7 +9,7 @@
 (setq org-publish-project-alist '(("simple-publish"
                                    :base-directory "."
                                    :base-extension "org"                         ; Only process org-mode files.
-                                   :publishing-directory "./published-html"
+                                   :publishing-directory "./published"
                                    :publishing-function org-html-publish-to-html
                                    :section-numbers nil
                                    :with-toc nil
