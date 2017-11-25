@@ -5,9 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build-modified": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
-        "build-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el"
+        "html-modified": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
+        "html-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el",
+        "build": "babel src -d lib"
     },
+
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jskksj/simple-publish.git"
@@ -17,5 +19,9 @@
     "bugs": {
         "url": "https://github.com/jskksj/simple-publish/issues"
     },
-    "homepage": "https://github.com/jskksj/simple-publish#readme"
+    "homepage": "https://github.com/jskksj/simple-publish#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.1"
+    }
 }
