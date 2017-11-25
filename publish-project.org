@@ -1,5 +1,5 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
-#+TITLE: Configure the Publishing Parameters
+#+TITLE: Publishing Build Script
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
 
 * Initialze the code needed to publish org-mode files
