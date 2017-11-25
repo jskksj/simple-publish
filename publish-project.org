@@ -15,16 +15,16 @@ Load up the required packages.
 
 ** Who am I?
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
-  (setq user-full-name "Dale Karp")
-  (setq user-mail-address "dale@dale.io")
+  (setq user-full-name "John Krumpotick")
+  (setq user-mail-address "softwaredevelopment@simplexapparati.com")
 #+END_SRC
 
 ** Initialize the publishing properties
 If a file does not export to HTML it can be because an of unset variable in a source block.
 
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
-  (setq org-publish-project-alist '(("simple-publish" 
-                                     :base-directory "."                           
+  (setq org-publish-project-alist '(("simple-publish"
+                                     :base-directory "."
                                      :base-extension "org"                         ; Only process org-mode files.
                                      :publishing-directory "./published-html"
                                      :publishing-function org-html-publish-to-html
