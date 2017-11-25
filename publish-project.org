@@ -7,7 +7,7 @@ If a file does not export to HTML it can be because an of unset variable in a so
 
 #+BEGIN_SRC emacs-lisp :results silent 
   (setq org-publish-project-alist '(("simple-publish" 
-                                     :base-directory "."                           ; This file must be at the root of the org project.
+                                     :base-directory "."                           
                                      :base-extension "org"                         ; Only process org-mode files.
                                      :publishing-directory "./published-html"
                                      :publishing-function org-html-publish-to-html
