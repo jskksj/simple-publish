@@ -1,3 +1,5 @@
 #+TITLE: 
 #+OPTIONS: html-postamble:nil html-preamble:nil
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
+# Just add more HTML_HEAD tags for additional css or js.
+# #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/some-kind-of.css'>"
