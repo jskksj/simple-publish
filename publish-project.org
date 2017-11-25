@@ -12,6 +12,12 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
   (require 'ox-publish)
 #+END_SRC
 
+** Who am I?
+#+BEGIN_SRC emacs-lisp :results silent
+  (setq user-full-name "Dale Karp")
+  (setq user-mail-address "dale@dale.io")
+#+END_SRC
+
 * Initialize the publishing properties
 If a file does not export to HTML it can be because an of unset variable in a source block.
 
