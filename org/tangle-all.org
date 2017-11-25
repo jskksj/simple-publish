@@ -1,6 +1,7 @@
 #+TITLE: Tangle All Org-mode Files
 
 http://fgiasson.com/blog/index.php/2016/10/26/literate-clojure-programming-tangle-all-in-org-mode/
+
 #+BEGIN_SRC elisp :results silent
 ;; Based on: http://turingmachine.org/bl/2013-05-29-recursively-listing-directories-in-elisp.html
 
