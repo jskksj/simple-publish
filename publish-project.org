@@ -44,6 +44,12 @@ If a file does not export to HTML it can be because an of unset variable in a so
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
+This block is for the tangled el file.
+#+BEGIN_SRC shell :results silent
+(org-mode)
+(org-publish-project "simple_publish")
+#+END_SRC
+
 #+BEGIN_SRC shell :results silent
   rm -fr ./published-html/*
 #+END_SRC
