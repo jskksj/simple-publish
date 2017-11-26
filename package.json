@@ -10,9 +10,9 @@
         "js": "babel js -d published --source-maps",
         "build": "npm run js && npm run html",
         "build-all": "npm run clean && npm run js && npm run html-all",
+        "lint": "eslint *.js **/*.js",
         "clean": "rm -rf published"
     },
-
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jskksj/simple-publish.git"
@@ -25,6 +25,8 @@
     "homepage": "https://github.com/jskksj/simple-publish#readme",
     "devDependencies": {
         "babel-cli": "^6.26.0",
-        "babel-preset-env": "^1.6.1"
+        "babel-eslint": "^7.2.3",
+        "babel-preset-env": "^1.6.1",
+        "eslint": "^3.19.0"
     }
 }
