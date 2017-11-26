@@ -28,5 +28,10 @@
         "babel-eslint": "^7.2.3",
         "babel-preset-env": "^1.6.1",
         "eslint": "^3.19.0"
+    },
+    "dependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "webpack": "^3.8.1"
     }
 }
