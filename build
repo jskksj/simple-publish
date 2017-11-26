@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
- emacs --eval "(setq force-all nil)" --batch -l ./publish-project.el
