@@ -27,7 +27,8 @@
         "babel-cli": "^6.26.0",
         "babel-eslint": "^7.2.3",
         "babel-preset-env": "^1.6.1",
-        "eslint": "^3.19.0"
+        "eslint": "^3.19.0",
+        "mocha": "^4.0.1"
     },
     "dependencies": {
         "babel-core": "^6.26.0",
