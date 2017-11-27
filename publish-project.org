@@ -3,7 +3,7 @@
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
 
 * Initialze the code needed to publish org-mode files
-This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]].
+This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]]. Run (org-babel-tangle), *C-c C-v t*, while this file is open in emacs to build the literate elisp build file.
 
 ** Load up the required packages.
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
@@ -15,8 +15,8 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
 
 ** Who am I?
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
-  (setq user-full-name "John Krumpotick")
-  (setq user-mail-address "softwaredevelopment@simplexapparati.com")
+  (setq user-full-name "YOUR NAME")
+  (setq user-mail-address "YOUREMAIL@SOMEWHERE")
 #+END_SRC
 
 ** Initialize the publishing properties
@@ -45,24 +45,8 @@ Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when 
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
-This block invokes org-mode and then tangles the el file.  The idea is to use a command like the following.
+This block would force a build of all the HTML5 files.  But I use [[file:package.json::"html-all":%20"emacs%20--eval%20'(setq%20force-all%20t)'%20--batch%20-l%20./publish-project.el",][npm run html-all]], see package.json
 #+BEGIN_EXAMPLE
-  emacs --eval "(setq force-all nil)" --batch -l ./publish-project.el
+  emacs --eval "(setq force-all t)" --batch -l ./publish-project.el
 #+END_EXAMPLE
 
-#+BEGIN_SRC emacs-lisp :results silent :tangle yes
-  (org-mode)
-  (org-publish-project "simple-publish" force-all)
-#+END_SRC
-
-#+BEGIN_SRC shell :results silent
-  rm -fr ./published/*
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project "simple-publish" nil) ; Rebuild files that have a fresh time stamp.
-#+END_SRC
-
-#+BEGIN_SRC emacs-lisp :results silent 
-  (org-publish-current-project "simple-publish" t)   ; Rebuild all files even if the time stamps have not changed.
-#+END_SRC
