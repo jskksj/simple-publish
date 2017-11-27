@@ -7,7 +7,6 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
         "html-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el",
-        "js": "babel js -d published --source-maps",
         "build": "npm run js",
         "clean": "rm -rf published"
     },
