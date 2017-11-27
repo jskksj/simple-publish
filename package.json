@@ -2,7 +2,7 @@
     "name": "simple-publish",
     "version": "0.1.0",
     "description": "* A simple template project for org-mode websites git clone this project to a new web site name and then add or edit org files as needed.",
-    "main": "js/index.js",
+    "main": "published/index.html",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
