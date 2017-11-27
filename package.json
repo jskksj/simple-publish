@@ -7,9 +7,6 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
         "html-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el",
-        "js": "babel js -d published --source-maps",
-        "build": "npm run js && npm run html",
-        "build-all": "npm run clean && npm run js && npm run html-all",
         "lint": "eslint *.js **/*.js",
         "clean": "rm -rf published"
     },
@@ -18,20 +15,13 @@
         "url": "git+https://github.com/jskksj/simple-publish.git"
     },
     "author": "John Krumpotick",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/jskksj/simple-publish/issues"
     },
     "homepage": "https://github.com/jskksj/simple-publish#readme",
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-eslint": "^7.2.3",
-        "babel-preset-env": "^1.6.1",
         "eslint": "^3.19.0"
     },
-    "dependencies": {
-        "babel-core": "^6.26.0",
-        "babel-loader": "^7.1.2",
-        "webpack": "^3.8.1"
-    }
+    "dependencies": {}
 }
