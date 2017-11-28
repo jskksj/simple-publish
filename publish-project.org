@@ -2,10 +2,10 @@
 #+TITLE: Publishing Build Script
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
 
-* Initialze the code needed to publish org-mode files
+** Initialze the code needed to publish org-mode files
 This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]]. Run (org-babel-tangle), *C-c C-v t*, while this file is open in emacs to build the literate elisp build file.
 
-** Load up the required packages.
+*** Load up the required packages.
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
   (package-initialize)
   (require 'org)
@@ -13,7 +13,7 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
   (require 'ox-publish)
 #+END_SRC
 
-** Who am I?
+*** Who am I?
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
   (setq user-full-name "YOUR NAME")
   (setq user-mail-address "YOUREMAIL@SOMEWHERE")
@@ -40,7 +40,7 @@ If a file does not export to HTML it can be because an of unset variable in a so
                                      :recursive t)))
 #+END_SRC
 
-** Clean and Build
+*** Clean and Build
 Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when a file has changed. The above functions normally only publish changed files. You can override this and force publishing of all files by giving a prefix argument to any of the commands above."
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
@@ -49,4 +49,3 @@ This block would force a build of all the HTML5 files.  But I use [[file:package
 #+BEGIN_EXAMPLE
   emacs --eval "(setq force-all t)" --batch -l ./publish-project.el
 #+END_EXAMPLE
-
