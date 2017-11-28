@@ -4,10 +4,10 @@
     "description": "* A simple template project for org-mode websites git clone this project to a new web site name and then add or edit org files as needed.",
     "main": "js/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "mocha test/*.js --requite babel-register --reporter spec || exit 0",
         "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
         "html-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el",
-        "js": "babel js -d published --source-maps",
+        "js": "babel js/*.js -d published --source-maps",
         "build": "npm run js && npm run html",
         "build-all": "npm run clean && npm run js && npm run html-all",
         "lint": "eslint *.js **/*.js",
@@ -27,6 +27,7 @@
         "babel-cli": "^6.26.0",
         "babel-eslint": "^7.2.3",
         "babel-preset-env": "^1.6.1",
+        "babel-register": "^6.26.0",
         "eslint": "^3.19.0",
         "mocha": "^4.0.1"
     },
