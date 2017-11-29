@@ -1,9 +1,9 @@
 #+TITLE: Testing with org-mode
 # Do not insert either pre or postamble.
 #+OPTIONS: html-postamble:nil html-preamble:nil
-#+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
+#+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../../css/org-mode.css'>"
 
-#+BEGIN_SRC js
+#+BEGIN_SRC js :exports code :tangle yes
 var assert = require('assert');
 describe('Array', function() {
     describe('#indexOf()', function() {
