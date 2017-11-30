@@ -7,7 +7,7 @@
 (setq user-mail-address "YOUREMAIL@SOMEWHERE")
 
 (setq org-publish-project-alist '(("simple-publish"
-                                   :base-directory "."
+                                   :base-directory "./org"
                                    :base-extension "org"                         ; Only process org-mode files.
                                    :publishing-directory "./published"
                                    :publishing-function org-html-publish-to-html
@@ -21,9 +21,12 @@
                                    :html-preamble nil
                                    :html-postamble nil
                                    :recursive t)
-                                  ("tangle",
-                                   :base-directory "org"
-                                   :publishing-directory "./published"
+                                  ("tangle"
+                                   :base-directory "./org/js"
+                                   :publishing-directory "./published/js"
                                    :publishing-function org-babel-tangle-publish)
+                                   :recursive t
                                   ("build-all"
                                    :components ("simple-publish" "tangle"))))
+
+(org-publish-project "build-all" force-all)

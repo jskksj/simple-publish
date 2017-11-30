@@ -8,7 +8,7 @@
         "build": "npm run js && npm run html",
         "build-all": "npm run clean && npm run js && npm run html-all",
         "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
-        "html-all": "emacs --eval '(setq force-all t)' --batch -l ./publish-project.el",
+        "html-all": "emacs -Q --eval '(setq debug-on-error t)' --eval '(setq force-all t)' --batch -l ./publish-project.el",
         "js": "babel js/*.js -d published --source-maps",
         "lint": "eslint *.js **/*.js",
         "test": "mocha test/*.js --requite babel-register --reporter spec || exit 0"
