@@ -4,6 +4,9 @@
 
 ** A simple template project for org-mode websites
 git clone this project to a new web site name and then add or edit org files as needed.
+#+BEGIN_EXAMPLE
+  git clone https://github.com/jskksj/simple-publish.git new-repository
+#+END_EXAMPLE
 
 - [[file:publish-project.org::*Initialze%20the%20code%20needed%20to%20publish%20org-mode%20files][Initialze the code needed to publish org-mode files]] 
 - [[file:package.json::"html":%20"emacs%20--eval%20'(setq%20force-all%20nil)'%20--batch%20-l%20./publish-project.el",][npm run html-all]] will force a build of all org files into HTML5.
@@ -16,19 +19,18 @@ git clone this project to a new web site name and then add or edit org files as 
 
 #+RESULTS: folder-description
 #+BEGIN_SRC shell
-- css/
-- index.org
 - LICENSE
 - org/
 - package.json
 - package-lock.json
-- published/
 - publish-project.el
 - publish-project.org
 - README.org
 #+END_SRC
 
-The *org* folder contains almost all of the source code that is used to build the HTML5 files.  org-mode maintains the folder structure that is given.  So index.html, README.html, and publish-project.html will end up at the root of the output folders, just as they start at the root of the repository folder.
+The *org* folder contains all of the source code that is used to build the HTML5 files.  org-mode export maintains the folder structure that it is given.  The files *index.html*, *README.html*, and *publish-project.html* will end up at the root of the output folders, even thoughas they start above the root of the repository folder. *publish-project.el* is a emacs lisp program tangled out of *publish-project.org*, it is run by npm to export out all of the html files.
+
+Once all of the project files have been processed, a new folder called *published* will contain all of the websites raw html, css, and assets.
 
 ** What's in the files
-*index.org* is where the project starts. *css/org-mode.css* pulls out the [[file:css/org-mode.css::/*%20These%20CSS%20styles%20have%20been%20pulled%20from%20(org-html-style-default)%20in%20ox-html.el%20*/][CSS]] styles that org-mode normally includes inline. *org/empty.org* is a simple template file.
+*org/index.org* is where the project starts. *org/css/org-mode.css* pulls out the [[file:css/org-mode.css::/*%20These%20CSS%20styles%20have%20been%20pulled%20from%20(org-html-style-default)%20in%20ox-html.el%20*/][CSS]] styles that org-mode normally includes inline. *org/empty.org* is a simple template file.
