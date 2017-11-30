@@ -3,8 +3,8 @@
 (require 'ox)
 (require 'ox-publish)
 
-(setq user-full-name "John Krumpotick")
-(setq user-mail-address "softwaredevelopment@simplexapparati.com")
+(setq user-full-name "YOUR NAME")
+(setq user-mail-address "YOUREMAIL@SOMEWHERE")
 
 (setq org-publish-project-alist '(("simple-publish"
                                    :base-directory "."
@@ -20,7 +20,10 @@
                                    :html-doctype "html5"                         ; And yes, render out HTML5.
                                    :html-preamble nil
                                    :html-postamble nil
-                                   :recursive t)))
-
-(org-mode)
-(org-publish-project "simple-publish" force-all)
+                                   :recursive t)
+                                  ("tangle",
+                                   :base-directory "org"
+                                   :publishing-directory "./published"
+                                   :publishing-function org-babel-tangle-publish)
+                                  ("build-all"
+                                   :components ("simple-publish" "tangle"))))
