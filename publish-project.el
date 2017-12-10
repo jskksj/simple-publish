@@ -20,13 +20,4 @@
                                    :html-doctype "html5"                         ; And yes, render out HTML5.
                                    :html-preamble nil
                                    :html-postamble nil
-                                   :recursive t)
-                                  ("tangle"
-                                   :base-directory "./org/js"
-                                   :publishing-directory "./published/js"
-                                   :publishing-function org-babel-tangle-publish)
-                                   :recursive t
-                                  ("build-all"
-                                   :components ("simple-publish" "tangle"))))
-
-(org-publish-project "build-all" force-all)
+                                   :recursive t)))

@@ -23,38 +23,27 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
 If a file does not export to HTML it can be because an of unset variable in a source block.
 
 #+BEGIN_SRC emacs-lisp :results silent :tangle yes
-    (setq org-publish-project-alist '(("simple-publish"
-                                       :base-directory "org"
-                                       :base-extension "org"                         ; Only process org-mode files.
-                                       :publishing-directory "./published"
-                                       :publishing-function org-html-publish-to-html
-                                       :section-numbers nil
-                                       :with-toc nil
-                                       :html-extension "html"
-                                       :html-head-include-scripts nil                ; Do not include the default javascript.
-                                       :html-head-include-default-style nil          ; Do not include the default css styles.
-                                       :html-html5-fancy t                           ; Supposedly this is required for HTML5 output.
-                                       :html-doctype "html5"                         ; And yes, render out HTML5.
-                                       :html-preamble nil
-                                       :html-postamble nil
-                                       :recursive t)
-                                      ("tangle"
-                                       :base-directory "org"
-                                       :publishing-directory "./published"
-                                       :publishing-function org-babel-tangle-publish)
-                                       :recursive t
-                                      ("build-all"
-                                       :components ("simple-publish" "tangle"))))
+  (setq org-publish-project-alist '(("simple-publish"
+                                     :base-directory "./org"
+                                     :base-extension "org"                         ; Only process org-mode files.
+                                     :publishing-directory "./published"
+                                     :publishing-function org-html-publish-to-html
+                                     :section-numbers nil
+                                     :with-toc nil
+                                     :html-extension "html"
+                                     :html-head-include-scripts nil                ; Do not include the default javascript.
+                                     :html-head-include-default-style nil          ; Do not include the default css styles.
+                                     :html-html5-fancy t                           ; Supposedly this is required for HTML5 output.
+                                     :html-doctype "html5"                         ; And yes, render out HTML5.
+                                     :html-preamble nil
+                                     :html-postamble nil
+                                     :recursive t)))
 #+END_SRC
 
 *** Clean and Build
 Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when a file has changed. The above functions normally only publish changed files. You can override this and force publishing of all files by giving a prefix argument to any of the commands above."
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
-
-#+BEGIN_SRC emacs-lisp :results silent :tangle yes
-  (org-publish-project "simple-publish" force-all)
-#+END_SRC
 
 This block would force a build of all the HTML5 files.  But I use [[file:package.json::"html-all":%20"emacs%20--eval%20'(setq%20force-all%20t)'%20--batch%20-l%20./publish-project.el",][npm run html-all]], see package.json
 #+BEGIN_EXAMPLE
