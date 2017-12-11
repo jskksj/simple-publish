@@ -2,7 +2,10 @@
 #+TITLE: How to Publish HTML5 Without all of the Default Styles and Javascript
 #+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
 
-** A simple template project for org-mode websites
+** I could not find an example of a static website exported from org-mode.  
+It took a while to figure out how to export a self contained project, so this is one example of how to do it.
+
+** A simple template project for static org-mode websites
 git clone this project to a new web site name and then add or edit org files as needed.
 #+BEGIN_EXAMPLE
   git clone https://github.com/jskksj/simple-publish.git new-repository
@@ -14,21 +17,21 @@ git clone this project to a new web site name and then add or edit org files as 
 ** What's in the folders
 #+NAME: folder-description
 #+BEGIN_SRC shell :exports results :results list code
-   ls -lF | awk {'print $9'}
+  ls -F .. | awk {'print $1'}
 #+END_SRC
 
 #+RESULTS: folder-description
 #+BEGIN_SRC shell
 - LICENSE
+- node_modules/
 - org/
 - package.json
 - package-lock.json
-- publish-project.el
-- publish-project.org
-- README.org
+- README.org@
 #+END_SRC
 
-The *org* folder contains all of the source code that is used to build the HTML5 files.  org-mode export maintains the folder structure that it is given.  The files *index.html*, *README.html*, and *publish-project.html* will end up at the root of the output folders, even thoughas they start above the root of the repository folder. *publish-project.el* is a emacs lisp program tangled out of *publish-project.org*, it is run by npm to export out all of the html files.
+
+The *org* folder contains all of the source code that is used to build the HTML5 files.  org-mode export maintains the folder structure that it is given.  The files *index.html*, *README.html*, and *publish-project.html* will end up at the root of the output folders, even thoughas they start above the root of the repository folder. *publish-project.el* is a emacs lisp program tangled out of *org/publish-project.org*, it is run by npm to export out all of the html files.
 
 Once all of the project files have been processed, a new folder called *published* will contain all of the websites raw html, css, and assets.
 
