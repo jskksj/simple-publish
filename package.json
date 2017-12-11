@@ -2,7 +2,7 @@
     "name": "simple-publish",
     "version": "0.1.0",
     "description": "* A simple template project for org-mode websites git clone this project to a new web site name and then add or edit org files as needed.",
-    "main": "js/index.js",
+    "main": "",
     "scripts": {
         "clean-published": "rm -rf ./published",
         "clean-el": "rm ./publish-project.el",
