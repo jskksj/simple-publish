@@ -6,7 +6,7 @@
 This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]]. Run (org-babel-tangle), *C-c C-v t*, while this file is open in emacs to build the literate elisp build file.
 
 *** Load up the required packages.
-#+BEGIN_SRC emacs-lisp :results silent :tangle yes
+#+BEGIN_SRC emacs-lisp :results silent :tangle ../publish-project.el
   (package-initialize)
   (require 'org)
   (require 'ox)
@@ -14,7 +14,7 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
 #+END_SRC
 
 *** Who am I?
-#+BEGIN_SRC emacs-lisp :results silent :tangle yes
+#+BEGIN_SRC emacs-lisp :results silent :tangle ../publish-project.el
   (setq user-full-name "YOUR NAME")
   (setq user-mail-address "YOUREMAIL@SOMEWHERE")
 #+END_SRC
@@ -22,7 +22,7 @@ This code has been blindly stolen from [[http://dale.io/blog/automated-org-publi
 ** Initialize the publishing properties
 If a file does not export to HTML it can be because an of unset variable in a source block.
 
-#+BEGIN_SRC emacs-lisp :results silent :tangle yes
+#+BEGIN_SRC emacs-lisp :results silent :tangle ../publish-project.el
   (setq org-publish-project-alist '(("simple-publish"
                                      :base-directory "./org"
                                      :base-extension "org"                         ; Only process org-mode files.
@@ -45,7 +45,7 @@ Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when 
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
-This block would force a build of all the HTML5 files.  But I use [[file:package.json::"html-all":%20"emacs%20--eval%20'(setq%20force-all%20t)'%20--batch%20-l%20./publish-project.el",][npm run html-all]], see package.json
+This block would force a build of all the HTML5 files.  But I use [[file:~/GitHub/simple-publish/package.json::"html-all":%20"emacs%20--batch%20--load%20publish-project.el%20--eval%20'(org-publish%20\"simple-publish\"%20t)'"][npm run html-all]], see package.json
 #+BEGIN_EXAMPLE
-  emacs --eval "(setq force-all t)" --batch -l ./publish-project.el
+  emacs --batch --load publish-project.el --eval '(org-publish "simple-publish" t)'
 #+END_EXAMPLE
