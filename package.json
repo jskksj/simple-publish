@@ -4,9 +4,11 @@
     "description": "* A simple template project for org-mode websites git clone this project to a new web site name and then add or edit org files as needed.",
     "main": "js/index.js",
     "scripts": {
-        "clean": "rm -rf published",
-        "html": "emacs --eval '(setq force-all nil)' --batch -l ./publish-project.el",
-        "html-all": "emacs --eval '(setq debug-on-error t)' --eval '(setq force-all t)' --batch -l ./publish-project.el"
+        "clean-published": "rm -rf ./published",
+        "clean-el": "rm ./publish-project.el",
+        "clean-all": "npm run clean-el && npm run clean-published",
+        "html": "emacs --batch --load publish-project.el --eval '(org-publish \"simple-publish\" nil)'",
+        "html-all": "emacs --batch --load publish-project.el --eval '(org-publish \"simple-publish\" t)'"
     },
     "repository": {
         "type": "git",
@@ -15,7 +17,7 @@
     "author": "John Krumpotick",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/jskksj/simple-publish/issues"
+        "url": "https://github.com/jskksj/simple-publish/issue676909c99839848e0b430117cf23124a54ab70e9s"
     },
     "homepage": "https://github.com/jskksj/simple-publish#readme",
     "devDependencies": {},
