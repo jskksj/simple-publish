@@ -45,7 +45,7 @@ Org uses [[http://orgmode.org/guide/Publishing.html][timestamps]] to track when 
 
 This [[https://stackoverflow.com/questions/21258769/using-emacs-org-mode-how-to-publish-the-unchanged-files-in-a-project][post]] has an example of how to "force" a build.
 
-This block would force a build of all the HTML5 files.  But I use [[file:~/GitHub/simple-publish/package.json::"html-all":%20"emacs%20--batch%20--load%20publish-project.el%20--eval%20'(org-publish%20\"simple-publish\"%20t)'"][npm run html-all]], see package.json
+This command would force a build of all the HTML5 files.  But I use [[file:~/GitHub/simple-publish/package.json::"html-all":%20"emacs%20--batch%20--load%20publish-project.el%20--eval%20'(org-publish%20\"simple-publish\"%20t)'"][npm run html-all]], see package.json
 #+BEGIN_EXAMPLE
   emacs --batch --load publish-project.el --eval '(org-publish "simple-publish" t)'
 #+END_EXAMPLE
