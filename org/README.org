@@ -11,7 +11,7 @@ git clone this project to a new web site name and then add or edit org files as 
   git clone https://github.com/jskksj/simple-publish.git new-repository
 #+END_EXAMPLE
 
-- [[file:publish-project.org::*Initialize%20the%20publishing%20properties][Initialze the code needed to publish org-mode file]] Do this when ever the org-mode project has been changed.
+- [[file:publish-project.org::*Initialize%20the%20publishing%20properties][Initialze the code needed to publish org-mode file]] Regenerate this emacs lisp script when ever the org-mode project has been changed. After that npm run commands are used to build the project.
 - [[file:~/GitHub/simple-publish/package.json::"html-all":%20"emacs%20--batch%20--load%20publish-project.el%20--eval%20'(org-publish%20\"simple-publish\"%20t)'"][npm run html-all]] will force a build of all org files into HTML5.
   
 ** What's in the folders
