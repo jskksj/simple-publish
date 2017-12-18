@@ -1,3 +1,2 @@
-#+TITLE: 
-#+OPTIONS: html-postamble:nil html-preamble:nil
-#+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../../css/org-mode.css'>"
+#+TITLE:
+#+SETUPFILE: publish-setup.org

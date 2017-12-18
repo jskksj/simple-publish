@@ -1,6 +1,6 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
 #+TITLE: Publishing Build Script
-#+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='../css/org-mode.css'>"
+#+SETUPFILE: publish-setup.org
 
 ** Initialze the code needed to publish org-mode files
 This code has been blindly stolen from [[http://dale.io/blog/automated-org-publishing.html][batch mode publishing]]. Run (org-babel-tangle), *C-c C-v t*, while this file is open in emacs to build the literate elisp build file.
