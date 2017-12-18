@@ -30,17 +30,34 @@ git clone this project to a new web site name and then add or edit org files as 
 - ├── LICENSE
 - ├── org
 - │   ├── css
-- │   │   ├── org-html-style-default.org
-- │   │   └── org-html-style-default.org~
+- │   │   ├── org-html-style-default.css
+- │   │   └── org-html-style-default.org
 - │   ├── html
 - │   │   └── empty.org
 - │   ├── publish-project.org
 - │   └── tangle-all.org
 - ├── package.json
 - ├── package-lock.json
-- ├── #README.org#
-- └── README.org
-- 3 directories, 11 files
+- ├── published
+- │   ├── index.html
+- │   ├── index.html~
+- │   ├── org
+- │   │   ├── css
+- │   │   │   ├── org-html-style-default.html
+- │   │   │   └── org-html-style-default.html~
+- │   │   ├── html
+- │   │   │   ├── empty.html
+- │   │   │   └── empty.html~
+- │   │   ├── tangle-all.html
+- │   │   └── tangle-all.html~
+- │   ├── README.html
+- │   ├── README.html~
+- │   ├── setup.html
+- │   └── setup.html~
+- ├── publish-project.el
+- ├── README.org
+- └── setup.org
+- 7 directories, 24 files
 #+END_SRC
 
 
