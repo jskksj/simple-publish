@@ -37,8 +37,7 @@ If a file does not export to HTML it can be because an of unset variable in a so
                                      :html-doctype "html5"                         ; And yes, render out HTML5.
                                      :html-preamble nil
                                      :html-postamble nil
-                                     :exclude "publish-project.org"                ; Do not export this to the published folder.
-                                     :exclude "setup.org"
+                                     :exclude "setup.org publish-project.org"
                                      :html-link-home "."                           ; HOME is in the same folder that the tangled file is in.
                                      :recursive t)))
 #+END_SRC
