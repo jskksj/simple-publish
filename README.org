@@ -1,6 +1,6 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
 #+TITLE: How to Publish HTML5 from org-mode Without all of the Default Styles and Javascript
-#+HTML_HEAD: "<link rel='stylesheet' type='text/css' href='css/org-mode.css'>"
+#+SETUPFILE: setup.org
 
 ** I could not find an example of a static website exported from org-mode.
 It took a while to figure out how to export a self contained project, so this is one example of how to do it.
