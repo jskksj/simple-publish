@@ -1,9 +1,39 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
-#+TITLE: How to Publish HTML5 from org-mode Without all of the Default Styles and Javascript
+#+TITLE: Publish a Static Website from Emacs Org-Mode
 #+SETUPFILE: publish-setup.org
 
-** I could not find an example of a static website exported from org-mode.
+** I could not find a working example of a static website exported from org-mode.
 It took a while to figure out how to export a self contained project, so this is one example of how to do it.
+
+*** Perequisites
+#+BEGIN_SRC emacs-lisp
+  (emacs-version)
+#+END_SRC
+
+#+RESULTS:
+: GNU Emacs 25.3.50.2 (x86_64-pc-linux-gnu, GTK+ Version 3.18.9)
+:  of 2017-09-15
+
+#+BEGIN_SRC emacs-lisp
+  (spacemacs/display-and-copy-version)
+#+END_SRC
+
+#+RESULTS:
+: Spacemacs v.0.200.10
+
+#+BEGIN_SRC shell
+  node --version
+#+END_SRC
+
+#+RESULTS:
+: v9.3.0
+
+#+BEGIN_SRC shell
+ npm --version
+#+END_SRC
+
+#+RESULTS:
+: 5.5.1
 
 ** A simple template project for static org-mode websites
 git clone this project to a new web site name and then add or edit org files as needed.
@@ -26,38 +56,18 @@ git clone this project to a new web site name and then add or edit org files as 
 #+RESULTS: folder-description
 #+BEGIN_SRC shell
 - .
+- ├── css
+- │   ├── publish-org-html-style-default.css
+- │   ├── publish-org-html-style-default.org
+- │   └── publish-setup.org
+- ├── html
+- │   ├── empty.org
+- │   └── publish-setup.org
 - ├── index.org
-- ├── LICENSE
-- ├── org
-- │   ├── css
-- │   │   ├── org-html-style-default.css
-- │   │   └── org-html-style-default.org
-- │   ├── html
-- │   │   └── empty.org
-- │   ├── publish-project.org
-- │   └── tangle-all.org
-- ├── package.json
-- ├── package-lock.json
-- ├── published
-- │   ├── index.html
-- │   ├── index.html~
-- │   ├── org
-- │   │   ├── css
-- │   │   │   ├── org-html-style-default.html
-- │   │   │   └── org-html-style-default.html~
-- │   │   ├── html
-- │   │   │   ├── empty.html
-- │   │   │   └── empty.html~
-- │   │   ├── tangle-all.html
-- │   │   └── tangle-all.html~
-- │   ├── README.html
-- │   ├── README.html~
-- │   ├── setup.html
-- │   └── setup.html~
-- ├── publish-project.el
-- ├── README.org
-- └── setup.org
-- 7 directories, 24 files
+- ├── publish-project.org
+- ├── publish-setup.org
+- └── README.org
+- 2 directories, 9 files
 #+END_SRC
 
 
