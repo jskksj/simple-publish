@@ -9,6 +9,7 @@ It took a while to figure out how to export a self contained project, so this is
 The software versions I am running. I am using spacemacs but the code is built with emacs in batch mode. You should be able to run older versions of the software but I have not tried it.
 
   *(emacs-version)*
+#+NAME: (emacs-version)
 #+BEGIN_SRC emacs-lisp :exports both :eval never-export
   (emacs-version)
 #+END_SRC
@@ -19,6 +20,7 @@ The software versions I am running. I am using spacemacs but the code is built w
 #+END_SRC
 
   *node --version*
+#+NAME: node --version
 #+BEGIN_SRC emacs-lisp :exports both :eval never-export
   node --version
 #+END_SRC
@@ -29,6 +31,7 @@ The software versions I am running. I am using spacemacs but the code is built w
 #+END_SRC
 
  *npm --version*
+#+NAME: npm --version
 #+BEGIN_SRC emacs-lisp :exports both :eval never-export
  npm --version
 #+END_SRC

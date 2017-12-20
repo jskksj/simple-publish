@@ -21,4 +21,5 @@
                                    :html-preamble nil
                                    :html-postamble nil
                                    :exclude "publish-[a-z]+.org"                 ;; Files prefixed with 'publish-' should not be exported.
+                                   :with-timestamps nil
                                    :recursive t)))
