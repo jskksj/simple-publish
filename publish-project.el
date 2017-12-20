@@ -4,12 +4,15 @@
 (require 'ox-publish)
 
 (setq org-publish-project-alist '(("simple-publish"
+                                   :author "Your Name Here"
+                                   :with-email "who@where"
                                    :base-directory "./org"
                                    :base-extension "org"                         ;; Only process org-mode files.
                                    :publishing-directory "./published"
                                    :publishing-function org-html-publish-to-html
                                    :section-numbers nil
                                    :with-toc nil
+                                   :time-stamp-file nil
                                    :html-extension "html"
                                    :html-head-include-scripts nil                ;; Do not include the default javascript.
                                    :html-head-include-default-style nil          ;; Do not include the default css styles.
