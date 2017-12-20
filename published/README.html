@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2017-12-19 Tue 21:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publish a Static Website from Emacs Org-Mode</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="YOUR NAME">
+<link rel="stylesheet" type="text/css" href="css/org-html-style-default.css">
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Publish a Static Website from Emacs Org-Mode</h1>
+</header>
+<div id="outline-container-orgdfeb02a" class="outline-2">
+<h2 id="orgdfeb02a">I could not find a working example of a static website exported from org-mode.</h2>
+<div class="outline-text-2" id="text-orgdfeb02a">
+<p>
+It took a while to figure out how to export a self contained project, so this is one example of how to do it.
+</p>
+</div>
+
+<div id="outline-container-org7fe8547" class="outline-3">
+<h3 id="org7fe8547">Perequisites</h3>
+<div class="outline-text-3" id="text-org7fe8547">
+<p>
+The software versions I am running. I am using spacemacs but the code is built with emacs in batch mode. You should be able to run older versions of the software but I have not tried it.
+</p>
+
+<p>
+<b>(emacs-version)</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">- <span style="font-style: italic;">"GNU Emacs 25.3.50.2 (x86_64-pc-linux-gnu, GTK+ Version 3.18.9)\n of 2017-09-15"</span>
+</pre>
+</div>
+
+<p>
+<b>node &#x2013;version</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">- v9.3.0
+</pre>
+</div>
+
+<p>
+<b>npm &#x2013;version</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">- 5.5.1
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3870b79" class="outline-2">
+<h2 id="org3870b79">A simple template project for static org-mode websites</h2>
+<div class="outline-text-2" id="text-org3870b79">
+<p>
+git clone this project to a new web site name and then add or edit org files as needed.
+</p>
+<pre class="example">
+git clone https://github.com/jskksj/simple-publish.git new-repository
+</pre>
+
+<ul class="org-ul">
+<li><a href="org/publish-project.html#org2c3dcb5">Initialze the code needed to publish org-mode file</a> Regenerate this emacs lisp script when ever the org-mode project has been changed. After that npm run commands are used to build the project.</li>
+<li><a href="package.json#org89be07f">npm run html-all</a> will force a build of all org files into HTML5.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8b720e0" class="outline-2">
+<h2 id="org8b720e0">What's in the folders</h2>
+<div class="outline-text-2" id="text-org8b720e0">
+<div class="org-src-container">
+<pre class="src src-shell">- .
+- &#9500;&#9472;&#9472; css
+- &#9474;&#160;&#160; &#9500;&#9472;&#9472; publish-org-html-style-default.css
+- &#9474;&#160;&#160; &#9500;&#9472;&#9472; publish-org-html-style-default.org
+- &#9474;&#160;&#160; &#9492;&#9472;&#9472; publish-setup.org
+- &#9500;&#9472;&#9472; html
+- &#9474;&#160;&#160; &#9500;&#9472;&#9472; empty.org
+- &#9474;&#160;&#160; &#9492;&#9472;&#9472; publish-setup.org
+- &#9500;&#9472;&#9472; index.org
+- &#9500;&#9472;&#9472; publish-project.org
+- &#9500;&#9472;&#9472; publish-setup.org
+- &#9492;&#9472;&#9472; README.org
+- 2 directories, 9 files
+</pre>
+</div>
+
+
+
+<p>
+The <b>org</b> folder contains all of the source code that is used to build the HTML5 files.  org-mode export maintains the folder structure that it is given.  The files <b>index.html</b>, <b>README.html</b>, and <b>publish-project.html</b> will end up at the root of the output folders, even thoughas they start above the root of the repository folder. <b>publish-project.el</b> is a emacs lisp program tangled out of <b>org/publish-project.org</b>, it is run by npm to export out all of the html files.
+</p>
+
+<p>
+Once all of the project files have been processed, a new folder called <b>published</b> will contain all of the websites raw html, css, and assets.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org83ef2a5" class="outline-2">
+<h2 id="org83ef2a5">What's in the files</h2>
+<div class="outline-text-2" id="text-org83ef2a5">
+<p>
+<b>org/index.org</b> is where the project starts. <b>org/css/org-mode.css</b> pulls out the <a href="org/css/org-mode.css#org9ce3baa">CSS</a> styles that org-mode normally includes inline. <b>org/empty.org</b> is a simple template file.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
