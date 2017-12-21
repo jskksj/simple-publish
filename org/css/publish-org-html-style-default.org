@@ -1,6 +1,0 @@
-#+TITLE:
-#+SETUPFILE: publish-setup.org
-
-#+BEGIN_SRC emacs-lisp :results silent :file publish-org-html-style-default.css
-  (print org-html-style-default)
-#+END_SRC

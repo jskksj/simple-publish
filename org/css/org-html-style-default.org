@@ -1,0 +1,9 @@
+# -*- org-confirm-babel-evaluate: nil; -*-
+#+TITLE:
+#+SETUPFILE: publish-setup.org
+
+I just manually run this source block to export the default org-mode CSS styling.
+
+#+BEGIN_SRC emacs-lisp :results silent :file org-html-style-default.css
+  (print org-html-style-default)
+#+END_SRC

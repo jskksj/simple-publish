@@ -13,17 +13,17 @@
 <header>
 <h1 class="title">Publish a Static Website from Emacs Org-Mode</h1>
 </header>
-<div id="outline-container-orgdfeb02a" class="outline-2">
-<h2 id="orgdfeb02a">I could not find a working example of a static website exported from org-mode.</h2>
-<div class="outline-text-2" id="text-orgdfeb02a">
+<div id="outline-container-orgb4fc867" class="outline-2">
+<h2 id="orgb4fc867">I could not find a working example of a static website exported from org-mode.</h2>
+<div class="outline-text-2" id="text-orgb4fc867">
 <p>
 It took a while to figure out how to export a self contained project, so this is one example of how to do it.
 </p>
 </div>
 
-<div id="outline-container-org7fe8547" class="outline-3">
-<h3 id="org7fe8547">Perequisites</h3>
-<div class="outline-text-3" id="text-org7fe8547">
+<div id="outline-container-org6c1be52" class="outline-3">
+<h3 id="org6c1be52">Perequisites</h3>
+<div class="outline-text-3" id="text-org6c1be52">
 <p>
 The software versions I am running. I am using spacemacs but the code is built with emacs in batch mode. You should be able to run older versions of the software but I have not tried it.
 </p>
@@ -32,7 +32,7 @@ The software versions I am running. I am using spacemacs but the code is built w
 <b>(emacs-version)</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orge29483e">(emacs-version)
+<pre class="src src-emacs-lisp" id="org212017a">(emacs-version)
 </pre>
 </div>
 
@@ -45,7 +45,7 @@ The software versions I am running. I am using spacemacs but the code is built w
 <b>node &#x2013;version</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="orge41c8ea">node --version
+<pre class="src src-emacs-lisp" id="orgf2768f9">node --version
 </pre>
 </div>
 
@@ -58,7 +58,7 @@ The software versions I am running. I am using spacemacs but the code is built w
 <b>npm &#x2013;version</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org3e7e8ab">npm --version
+<pre class="src src-emacs-lisp" id="org97fefdb">npm --version
 </pre>
 </div>
 
@@ -70,9 +70,9 @@ The software versions I am running. I am using spacemacs but the code is built w
 </div>
 </div>
 
-<div id="outline-container-org3870b79" class="outline-2">
-<h2 id="org3870b79">A simple template project for static org-mode websites</h2>
-<div class="outline-text-2" id="text-org3870b79">
+<div id="outline-container-org2793c5f" class="outline-2">
+<h2 id="org2793c5f">A simple template project for static org-mode websites</h2>
+<div class="outline-text-2" id="text-org2793c5f">
 <p>
 git clone this project to a new web site name and then add or edit org files as needed.
 </p>
@@ -81,17 +81,17 @@ git clone https://github.com/jskksj/simple-publish.git new-repository
 </pre>
 
 <ul class="org-ul">
-<li><a href="org/publish-project.html#org2c3dcb5">Initialze the code needed to publish org-mode file</a> Regenerate this emacs lisp script when ever the org-mode project has been changed. After that npm run commands are used to build the project.</li>
-<li><a href="package.json#org89be07f">npm run html-all</a> will force a build of all org files into HTML5.</li>
+<li><a href="org/publish-project.html#org16200c5">Initialze the code needed to publish org-mode file</a> Regenerate this emacs lisp script when ever the org-mode project has been changed. After that npm run commands are used to build the project.</li>
+<li><a href="package.json#org6b17b48">npm run html-all</a> will force a build of all org files into HTML5.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8b720e0" class="outline-2">
-<h2 id="org8b720e0">What's in the folders</h2>
-<div class="outline-text-2" id="text-org8b720e0">
+<div id="outline-container-org67ade6b" class="outline-2">
+<h2 id="org67ade6b">What's in the folders</h2>
+<div class="outline-text-2" id="text-org67ade6b">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp" id="org18cd732">tree
+<pre class="src src-emacs-lisp" id="orgdced013">tree
 </pre>
 </div>
 
@@ -124,11 +124,11 @@ Once all of the project files have been processed, a new folder called <b>publis
 </div>
 </div>
 
-<div id="outline-container-org83ef2a5" class="outline-2">
-<h2 id="org83ef2a5">What's in the files</h2>
-<div class="outline-text-2" id="text-org83ef2a5">
+<div id="outline-container-org6b78dab" class="outline-2">
+<h2 id="org6b78dab">What's in the files</h2>
+<div class="outline-text-2" id="text-org6b78dab">
 <p>
-<b>org/index.org</b> is where the project starts. <b>org/css/org-mode.css</b> pulls out the <a href="org/css/org-mode.css#org9ce3baa">CSS</a> styles that org-mode normally includes inline. <b>org/empty.org</b> is a simple template file.
+<b>org/index.org</b> is where the project starts. <b>org/css/org-mode.css</b> pulls out the <a href="org/css/org-mode.css#org5e36ecd">CSS</a> styles that org-mode normally includes inline. <b>org/empty.org</b> is a simple template file.
 </p>
 </div>
 </div>
