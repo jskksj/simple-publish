@@ -25,7 +25,6 @@ These properties will be common to all of the source files. If a file does not e
         ;; org files to be exported to HTML.
         ("simple-publish-org"
          :author "Your Name Here"
-         :with-email "who@where"
          :base-directory "./org"
          :base-extension "org"
          :publishing-directory "./published"

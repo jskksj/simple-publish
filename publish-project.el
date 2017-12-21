@@ -2,14 +2,12 @@
 (require 'org)
 (require 'ox)
 (require 'ox-publish)
-(setq debug-on-error t)
 
 (setq org-publish-project-alist
     '(
       ;; org files to be exported to HTML.
       ("simple-publish-org"
        :author "Your Name Here"
-       :with-email "who@where"
        :base-directory "./org"
        :base-extension "org"
        :publishing-directory "./published"
@@ -33,6 +31,8 @@
        :base-extension "css"
        :publishing-directory "./published/css"
        :publishing-function org-publish-attachment)
+
+      ;; Publish all of the components in order.
       ("simple-publish" :components ("simple-publish-org" "simple-publish-css"))
     )
 )
