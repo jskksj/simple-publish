@@ -1,0 +1,22 @@
+# -*- org-confirm-babel-evaluate: nil; -*-
+#+TITLE: A Git Pre-Receive Hook
+#+SETUPFILE: publish-setup.org
+
+This will prevent pushes from a cloned repository. Still, it might be better to allow pushes.  That way a feature branch that only contains
+work relevant to this project could be pushed and merged as normal.
+
+#+BEGIN_SRC shell :results silent :tangle ../.git/hooks/pre-receive :tangle-mode (identity #o764)
+  #!/usr/bin/env bash
+
+  echo ""
+  echo "=================================================="
+  echo "This repository is no longer available for pushes."
+  echo "=================================================="
+  echo ""
+  exit 1
+#+END_SRC
+
+
+#+BEGIN_SRC shell :results silent
+  rm ../.git/hooks/pre-receive
+#+END_SRC
