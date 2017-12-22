@@ -1,0 +1,15 @@
+# -*- org-confirm-babel-evaluate: nil; -*-
+#+TITLE: A Git Pre-Receive Hook
+#+SETUPFILE: publish-setup.org
+
+
+#+BEGIN_SRC shell :results silent :tangle ../.git/hooks/pre-receive :tangle-mode (identity #o764)
+  #!/usr/bin/env bash
+
+  echo ""
+  echo "=================================================="
+  echo "This repository is no longer available for pushes."
+  echo "=================================================="
+  echo ""
+  exit 1
+#+END_SRC
