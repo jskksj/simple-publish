@@ -2,8 +2,7 @@
 #+TITLE: A Git Pre-Receive Hook
 #+SETUPFILE: publish-setup.org
 
-This will prevent pushes from a cloned repository. Still, it might be better to allow pushes.  That way a feature branch that only contains
-work relevant to this project could be pushed and merged as normal.
+This will prevent pushes from a cloned repository.
 
 #+BEGIN_SRC shell :results silent :tangle ../.git/hooks/pre-receive :tangle-mode (identity #o764)
   #!/usr/bin/env bash
