@@ -1,5 +1,5 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
-#+TITLE:
+#+TITLE: Dump the Default CSS styles
 #+SETUPFILE: publish-setup.org
 
 I just manually run this source block to export the default org-mode CSS styling.

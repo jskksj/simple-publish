@@ -1,1 +1,2 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/org-html-style-default.css">
+#+HTML_HEAD: <script src="js/org-html-scripts.js"></script>

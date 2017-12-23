@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Git Pre-Receive Hook</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Your Name Here">
+<link rel="stylesheet" type="text/css" href="css/org-html-style-default.css">
+<script src="js/org-html-scripts.js"></script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">A Git Pre-Receive Hook</h1>
+</header><p>
+This will prevent pushes from a cloned repository. Still, it might be better to allow pushes.  That way a feature branch that only contains
+work relevant to this project could be pushed and merged as normal.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/usr/bin/</span><span style="font-weight: bold;">env</span><span style="font-weight: bold; font-style: italic;"> bash</span>
+
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">""</span>
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"=================================================="</span>
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"This repository is no longer available for pushes."</span>
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">"=================================================="</span>
+<span style="font-weight: bold;">echo</span> <span style="font-style: italic;">""</span>
+<span style="font-weight: bold;">exit</span> 1
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-shell">rm ../.git/hooks/pre-receive
+</pre>
+</div>
+</div>
+</body>
+</html>

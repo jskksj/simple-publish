@@ -32,7 +32,14 @@
        :publishing-directory "./published/css"
        :publishing-function org-publish-attachment)
 
+      ;; Javascript files to be copied to the published folder.
+      ("simple-publish-js"
+       :base-directory "./org/js"
+       :base-extension "js"
+       :publishing-directory "./published/js"
+       :publishing-function org-publish-attachment)
+
       ;; Publish all of the components in order.
-      ("simple-publish" :components ("simple-publish-org" "simple-publish-css"))
+      ("simple-publish" :components ("simple-publish-org" "simple-publish-css" "simple-publish-js"))
     )
 )

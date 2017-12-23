@@ -1,0 +1,12 @@
+# -*- org-confirm-babel-evaluate: nil; -*-
+#+TITLE: Dump the Default javascript
+#+SETUPFILE: publish-setup.org
+
+I just manually run this source block to export the default org-mode javascript.
+
+The variable contains a script HTML element.  That is a problem since I have the text contained in the variable included into the SETUPFILE bye a HEADER option.
+I chose to delete the first and last lines of the variable's text output to fix this problem.
+
+#+BEGIN_SRC emacs-lisp :results silent :file org-html-scripts.js
+  (print org-html-scripts)
+#+END_SRC

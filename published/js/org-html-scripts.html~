@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dump the Default javascript</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Your Name Here">
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Dump the Default javascript</h1>
+</header><p>
+I just manually run this source block to export the default org-mode javascript.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(print org-html-scripts)
+</pre>
+</div>
+</div>
+</body>
+</html>
