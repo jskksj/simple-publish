@@ -84,3 +84,13 @@ Once all of the project files have been processed, a new folder called *publishe
 
 ** What's in the files
 *org/index.org* is where the project starts. *org/css/org-mode.css* pulls out the [[file:org/css/org-mode.css::.title%20{][CSS]] styles that org-mode normally includes inline. *org/empty.org* is a simple template file.
+
+* Purpose Statement
+** Type of document
+README
+** What does the audience need to know
+What this project does and how to use it.
+** Who is the audience
+DEVELOPERS who are USERS of EMACS ORG-MODE.
+** What does the audience do with it
+They will use the project as an example of a literate web site.
