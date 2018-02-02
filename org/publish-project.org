@@ -62,7 +62,7 @@ These properties will be common to all of the source files. If a file does not e
          :publishing-function org-publish-attachment)
 
         ;; Publish all of the components in order.
-        ("simple-publish" :components ("simple-publish-org" "simple-publish-css" "simple-publish-js"))
+        ("simple-publish" :components ("simple-publish-css" "simple-publish-js" "simple-publish-org"))
       )
   )
 #+END_SRC
