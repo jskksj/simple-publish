@@ -19,26 +19,8 @@ The software versions I am running. I am using spacemacs but the code is built w
 - "GNU Emacs 25.3.50.2 (x86_64-pc-linux-gnu, GTK+ Version 3.18.9)\n of 2017-09-15"
 #+END_SRC
 
-  *node --version*
-#+NAME: node --version
-#+BEGIN_SRC emacs-lisp :exports both :eval never-export
-  node --version
-#+END_SRC
-
-#+RESULTS:
 #+BEGIN_SRC shell
-- v9.3.0
-#+END_SRC
-
- *npm --version*
-#+NAME: npm --version
-#+BEGIN_SRC emacs-lisp :exports both :eval never-export
- npm --version
-#+END_SRC
-
-#+RESULTS:
-#+BEGIN_SRC shell
-- 5.5.1
+bash version
 #+END_SRC
 
 ** A simple template project for static org-mode websites
